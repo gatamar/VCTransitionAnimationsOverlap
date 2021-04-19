@@ -66,6 +66,10 @@ class CustomTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
         }
         animator.addCompletion { (position) in
             print("Completion1: position = \(position)")
+        }
+        
+        animator.addCompletion { (position) in
+            print("Completion2: position = \(position)")
             
             // transition completed, reset the current animator:
             self.animatorForCurrentTransition = nil

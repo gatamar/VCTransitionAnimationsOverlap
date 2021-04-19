@@ -10,29 +10,64 @@ import UIKit
 class CustomTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
     private let dur: TimeInterval = 5
     
+    // property for keeping the animator for current ongoing transition
+    private var animatorForCurrentTransition: UIViewImplicitlyAnimating?
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return dur
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        // animateTransition should work too, so let's just use the interruptibleAnimator implementation to achieve it
+        let anim = self.interruptibleAnimator(using: transitionContext)
+        anim.startAnimation()
+    }
+    
+    // Like here: https://stackoverflow.com/a/48090690/2567725
+    func interruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
+        // as per documentation, the same object should be returned for the ongoing transition
+        if let animatorForCurrentSession = animatorForCurrentTransition {
+            return animatorForCurrentSession
+        }
+        
         let fromVC = transitionContext.viewController(forKey: .from)!
         let toVC = transitionContext.viewController(forKey: .to)!
         
         let frame0 = CGRect(x: 0, y: 400, width: 100, height: 200)
         let frame1 = fromVC.view.frame.aspectFit(for: frame0)
         let orangeView = OrangeView(frame: frame0)
-
         fromVC.view.addSubview(orangeView)
-        UIView.animate(withDuration: dur) {
-            
+        
+        let animator = UIViewPropertyAnimator(duration: dur, curve: .linear)
+        animator.addAnimations {
             orangeView.frame = frame1
+        }
+        animator.addCompletion { (position) in
+            switch position {
+            case .end:
+                print("Completion handler called at end of animation")
+                break
+            case .current:
+                print("Completion handler called mid-way through animation")
+                break
+            case .start:
+                print("Completion handler called  at start of animation")
+                break
+            @unknown default:
+                break
+            }
+            // transition completed, reset the current animator:
+            self.animatorForCurrentTransition = nil
             
-        } completion: { (finished) in
             orangeView.removeFromSuperview()
             transitionContext.containerView.addSubview(toVC.view)
-            transitionContext.completeTransition(true)
-        }
+            //transitionContext.completeTransition(true)
 
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        }
+        // keep the reference to current animator
+        self.animatorForCurrentTransition = animator
+        return animator
     }
 
 }

@@ -18,8 +18,8 @@ class CustomTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
         let fromVC = transitionContext.viewController(forKey: .from)!
         let toVC = transitionContext.viewController(forKey: .to)!
         
-        let frame0 = CGRect(x: 0, y: 100, width: 200, height: 200)
-        let frame1 = CGRect(x: 200, y: 300, width: 200, height: 200)
+        let frame0 = CGRect(x: 0, y: 400, width: 100, height: 200)
+        let frame1 = fromVC.view.frame.aspectFit(for: frame0)
         let orangeView = OrangeView(frame: frame0)
 
         fromVC.view.addSubview(orangeView)

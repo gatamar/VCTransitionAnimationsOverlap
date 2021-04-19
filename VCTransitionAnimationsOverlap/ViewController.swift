@@ -8,7 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate {
-
+    private var customTransitionDriver: CustomTransitioning?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
@@ -16,7 +17,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return CustomTransitioning()
+        customTransitionDriver = CustomTransitioning()
+        return customTransitionDriver
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -25,7 +27,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        print("viewWillTransition: ViewController")
+        customTransitionDriver?.stopTransitioningAnimationASAP()
     }
 }
 

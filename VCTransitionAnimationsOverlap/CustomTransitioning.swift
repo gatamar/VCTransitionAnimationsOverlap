@@ -23,6 +23,11 @@ class CustomTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
         anim.startAnimation()
     }
     
+    func stopTransitioningAnimationASAP() {
+        //animatorForCurrentTransition?.stopAnimation(true)
+        animatorForCurrentTransition?.finishAnimation(at: .current)
+    }
+    
     // Like here: https://stackoverflow.com/a/48090690/2567725
     func interruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
         // as per documentation, the same object should be returned for the ongoing transition

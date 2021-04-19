@@ -24,8 +24,8 @@ class CustomTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func stopTransitioningAnimationASAP() {
-        //animatorForCurrentTransition?.stopAnimation(true)
-        animatorForCurrentTransition?.finishAnimation(at: .current)
+        animatorForCurrentTransition?.stopAnimation(true)
+        //animatorForCurrentTransition?.finishAnimation(at: .current)
     }
     
     // Like here: https://stackoverflow.com/a/48090690/2567725

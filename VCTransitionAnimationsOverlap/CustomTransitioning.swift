@@ -23,13 +23,9 @@ class CustomTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
         let anim = self.interruptibleAnimator(using: transitionContext)
         anim.startAnimation()
     }
-    
-    func stopTransitioningAnimationASAP() {
+        
+    func changeAnimationDestinationOnFly(_ newFrame: CGRect) {
         animatorForCurrentTransition?.stopAnimation(true)
-        //animatorForCurrentTransition?.finishAnimation(at: .current)
-    }
-    
-    func animateOrangeViewToNewRect(_ newFrame: CGRect) {
         if let orangeView = self.orangeView {
             animatorForCurrentTransition?.addAnimations? {
                 let curStoppedFrame = orangeView.frame

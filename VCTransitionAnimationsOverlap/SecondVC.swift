@@ -14,6 +14,14 @@ class SecondVC: UIViewController {
         view.backgroundColor = .green
     }
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .all
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        print("viewWillTransition: SecondVC")
+    }
 
 }
 

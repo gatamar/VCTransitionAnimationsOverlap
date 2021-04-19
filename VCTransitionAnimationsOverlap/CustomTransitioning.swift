@@ -8,7 +8,7 @@
 import UIKit
 
 class CustomTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
-    private let dur: TimeInterval = 3
+    private let dur: TimeInterval = 5
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return dur
@@ -34,5 +34,5 @@ class CustomTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
         }
 
     }
-    
+
 }

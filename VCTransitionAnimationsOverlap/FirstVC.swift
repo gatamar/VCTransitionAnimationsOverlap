@@ -30,5 +30,14 @@ class FirstVC: UIViewController {
         assert(parent == vc2.parent && self.parent != nil)
         parent?.navigationController?.pushViewController(vc2, animated: true)
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .all
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        print("viewWillTransition: FirstVC")
+    }
 }
 

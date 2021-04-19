@@ -16,7 +16,7 @@
 		4F50EEE4262DB58E000A87B9 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50EEE3262DB58E000A87B9 /* FirstVC.swift */; };
 		4F50EEE7262DB59C000A87B9 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50EEE6262DB59C000A87B9 /* SecondVC.swift */; };
 		4F50EEEA262DBA85000A87B9 /* CustomTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50EEE9262DBA85000A87B9 /* CustomTransitioning.swift */; };
-		4F50EEED262DC175000A87B9 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50EEEC262DC175000A87B9 /* SquareView.swift */; };
+		4F50EEED262DC175000A87B9 /* ColoredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50EEEC262DC175000A87B9 /* ColoredView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		4F50EEE3262DB58E000A87B9 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		4F50EEE6262DB59C000A87B9 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		4F50EEE9262DBA85000A87B9 /* CustomTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitioning.swift; sourceTree = "<group>"; };
-		4F50EEEC262DC175000A87B9 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		4F50EEEC262DC175000A87B9 /* ColoredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 				4F50EEDC262DB36E000A87B9 /* Info.plist */,
 				4F50EEE3262DB58E000A87B9 /* FirstVC.swift */,
 				4F50EEE9262DBA85000A87B9 /* CustomTransitioning.swift */,
-				4F50EEEC262DC175000A87B9 /* SquareView.swift */,
+				4F50EEEC262DC175000A87B9 /* ColoredView.swift */,
 			);
 			path = VCTransitionAnimationsOverlap;
 			sourceTree = "<group>";
@@ -153,7 +153,7 @@
 				4F50EEE7262DB59C000A87B9 /* SecondVC.swift in Sources */,
 				4F50EEE4262DB58E000A87B9 /* FirstVC.swift in Sources */,
 				4F50EECF262DB36D000A87B9 /* AppDelegate.swift in Sources */,
-				4F50EEED262DC175000A87B9 /* SquareView.swift in Sources */,
+				4F50EEED262DC175000A87B9 /* ColoredView.swift in Sources */,
 				4F50EEEA262DBA85000A87B9 /* CustomTransitioning.swift in Sources */,
 				4F50EED1262DB36D000A87B9 /* SceneDelegate.swift in Sources */,
 			);

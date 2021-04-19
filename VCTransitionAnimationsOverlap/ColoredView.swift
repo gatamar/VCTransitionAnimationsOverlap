@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OrangeView: UIView {
+class ColoredView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         isUserInteractionEnabled = false

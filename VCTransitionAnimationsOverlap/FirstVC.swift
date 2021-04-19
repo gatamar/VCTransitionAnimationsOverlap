@@ -27,15 +27,8 @@ class FirstVC: UIViewController {
     @objc func runBtnPressed() {
         let vc2 = SecondVC()
         parent!.addChild(vc2)
-        
         assert(parent == vc2.parent && self.parent != nil)
-        
-        parent!.transition(from: self, to: vc2, duration: 2, options: .curveLinear) {
-        
-        } completion: { (finished) in
-            
-        }
-
+        parent?.navigationController?.pushViewController(vc2, animated: true)
     }
 }
 

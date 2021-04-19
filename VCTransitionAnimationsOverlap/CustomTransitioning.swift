@@ -8,12 +8,23 @@
 import UIKit
 
 class CustomTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
+    private let dur: TimeInterval = 3
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 3
+        return dur
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        fatalError("TODO")
+        let toVC = transitionContext.viewController(forKey: .to)!
+        UIView.animate(withDuration: dur) {
+            
+            // do smth real here
+            
+        } completion: { (finished) in
+            transitionContext.containerView.addSubview(toVC.view)
+            transitionContext.completeTransition(true)
+        }
+
     }
     
 }

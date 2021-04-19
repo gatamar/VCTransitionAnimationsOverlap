@@ -27,7 +27,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
+        
         customTransitionDriver?.stopTransitioningAnimationASAP()
+        
+        coordinator.animate { (context) in
+            self.customTransitionDriver?.animateOrangeViewToNewRect(CGRect(origin: .zero, size: size))
+        } completion: { (context) in
+            
+        }
+
     }
 }
 

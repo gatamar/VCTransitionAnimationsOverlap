@@ -15,7 +15,7 @@
 		4F7FC65D262ED1D900C1FBFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7FC65B262ED1D900C1FBFF /* LaunchScreen.storyboard */; };
 		4F7FC660262ED1D900C1FBFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FC65F262ED1D900C1FBFF /* main.m */; };
 		4F7FC669262EDD4B00C1FBFF /* TrafficLightView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FC667262EDD4B00C1FBFF /* TrafficLightView1.m */; };
-		4F7FC66E262EDE8900C1FBFF /* TrafficLightView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FC66D262EDE8900C1FBFF /* TrafficLightView2.m */; };
+		4F7FC66E262EDE8900C1FBFF /* TrafficLightView2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FC66D262EDE8900C1FBFF /* TrafficLightView2.mm */; };
 		4F7FC671262EDEBB00C1FBFF /* TrafficLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FC670262EDEBB00C1FBFF /* TrafficLightView.m */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		4F7FC65F262ED1D900C1FBFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F7FC667262EDD4B00C1FBFF /* TrafficLightView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficLightView1.m; sourceTree = "<group>"; };
 		4F7FC668262EDD4B00C1FBFF /* TrafficLightView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrafficLightView.h; sourceTree = "<group>"; };
-		4F7FC66D262EDE8900C1FBFF /* TrafficLightView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightView2.m; sourceTree = "<group>"; };
+		4F7FC66D262EDE8900C1FBFF /* TrafficLightView2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TrafficLightView2.mm; sourceTree = "<group>"; };
 		4F7FC670262EDEBB00C1FBFF /* TrafficLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +80,7 @@
 				4F7FC668262EDD4B00C1FBFF /* TrafficLightView.h */,
 				4F7FC670262EDEBB00C1FBFF /* TrafficLightView.m */,
 				4F7FC667262EDD4B00C1FBFF /* TrafficLightView1.m */,
-				4F7FC66D262EDE8900C1FBFF /* TrafficLightView2.m */,
+				4F7FC66D262EDE8900C1FBFF /* TrafficLightView2.mm */,
 				4F7FC653262ED1D700C1FBFF /* ViewController.h */,
 				4F7FC654262ED1D700C1FBFF /* ViewController.m */,
 			);
@@ -160,7 +160,7 @@
 				4F7FC64F262ED1D700C1FBFF /* AppDelegate.m in Sources */,
 				4F7FC660262ED1D900C1FBFF /* main.m in Sources */,
 				4F7FC652262ED1D700C1FBFF /* SceneDelegate.m in Sources */,
-				4F7FC66E262EDE8900C1FBFF /* TrafficLightView2.m in Sources */,
+				4F7FC66E262EDE8900C1FBFF /* TrafficLightView2.mm in Sources */,
 				4F7FC671262EDEBB00C1FBFF /* TrafficLightView.m in Sources */,
 				4F7FC669262EDD4B00C1FBFF /* TrafficLightView1.m in Sources */,
 			);

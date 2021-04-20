@@ -7,6 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
+// hardcoded durations for N-step animation, used in "TrafficLightView1" and "TrafficLightView2"
+static const double tl_dur1 = 4;
+static const double tl_dur2 = 5;
+static const double tl_dur3 = 3;
+static const double tl_dur4 = 0.1;
+
 @interface TrafficLightView: UIView
 {
     UIView* _view1;

@@ -29,25 +29,25 @@
     CGRect f3 = _view3.frame;
     f3.origin.x = w/2;
     
-    [UIView animateWithDuration:4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:tl_dur1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         _view1.frame = f1;
     } completion:^(BOOL finished) {
         
     }];
     
-    [UIView animateWithDuration:5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:tl_dur2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         _view2.frame = f2;
     } completion:^(BOOL finished) {
         
     }];
     
-    [UIView animateWithDuration:3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:tl_dur3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         _view3.frame = f3;
     } completion:^(BOOL finished) {
         
     }];
     
-    [UIView animateWithDuration:0.1 delay:5 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:tl_dur4 delay:tl_dur2 options:UIViewAnimationOptionCurveLinear animations:^{
         _view1.frame = CGRectZero;
         _view2.frame = CGRectZero;
         _view3.frame = CGRectZero;

@@ -72,10 +72,10 @@
         
     }];
     
-    [UIView animateWithDuration:10 delay:6 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        _view1.alpha = 0;
-        _view2.alpha = 0;
-        _view3.alpha = 0;
+    [UIView animateWithDuration:0.1 delay:5 options:UIViewAnimationOptionCurveLinear animations:^{
+        _view1.frame = CGRectZero;
+        _view2.frame = CGRectZero;
+        _view3.frame = CGRectZero;
     } completion:^(BOOL finished) {
         [_view1 removeFromSuperview];
         [_view2 removeFromSuperview];

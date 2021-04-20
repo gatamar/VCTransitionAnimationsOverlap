@@ -26,11 +26,7 @@
     CGFloat gridStepY = (h-gridY1)/5;
     CGFloat vSide = gridStepY * 0.4;
     
-    UIButton* runBtn = [[UIButton alloc] initWithFrame:CGRectMake(w-100, gridY1, 100, 40)];
-    runBtn.backgroundColor = UIColor.blueColor;
-    [runBtn setTitle:@"Run!" forState:UIControlStateNormal];
-    [runBtn addTarget:self action:@selector(onRunBtnPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:runBtn];
+    [self addButtons];
     
     _view1 = [self createBlockViewWithColor:UIColor.greenColor
                                    andFrame:CGRectMake(0, gridY1+gridStepY-vSide, vSide, vSide)];
@@ -42,6 +38,29 @@
     [self.view addSubview:_view1];
     [self.view addSubview:_view2];
     [self.view addSubview:_view3];
+}
+
+- (void)addButtons {
+    CGFloat w = self.view.frame.size.width, h = self.view.frame.size.height;
+    
+    CGFloat gridY1 = 50;
+    
+    UIButton* runBtn = [[UIButton alloc] initWithFrame:CGRectMake(w-100, gridY1, 100, 40)];
+    runBtn.backgroundColor = UIColor.blueColor;
+    [runBtn setTitle:@"Run!" forState:UIControlStateNormal];
+    [runBtn addTarget:self action:@selector(onRunBtnPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:runBtn];
+    
+    UIButton* stopBtn = [[UIButton alloc] initWithFrame:CGRectMake(w-220, gridY1, 100, 40)];
+    stopBtn.backgroundColor = UIColor.darkGrayColor;
+    [stopBtn setTitle:@"Stop!" forState:UIControlStateNormal];
+    [stopBtn addTarget:self action:@selector(onStopBtnPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:stopBtn];
+}
+
+- (void)onStopBtnPressed
+{
+    
 }
 
 - (void)onRunBtnPressed

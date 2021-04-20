@@ -6,12 +6,12 @@
 //
 
 #import "ViewController.h"
+#import "TrafficLightView.h"
 
 @interface ViewController ()
 {
-    UIView* _view1;
-    UIView* _view2;
-    UIView* _view3;
+    TrafficLightView1* _tlView1;
+    TrafficLightView2* _tlView2;
 }
 @end
 
@@ -21,23 +21,14 @@
     [super viewDidLoad];
     
     CGFloat w = self.view.frame.size.width, h = self.view.frame.size.height;
-    
-    CGFloat gridY1 = 50;
-    CGFloat gridStepY = (h-gridY1)/5;
-    CGFloat vSide = gridStepY * 0.4;
+    CGFloat gridY1 = 100;
     
     [self addButtons];
     
-    _view1 = [self createBlockViewWithColor:UIColor.greenColor
-                                   andFrame:CGRectMake(0, gridY1+gridStepY-vSide, vSide, vSide)];
-    _view2 = [self createBlockViewWithColor:UIColor.orangeColor
-                                   andFrame:CGRectMake(0, gridY1+gridStepY*2-vSide, vSide, vSide)];
-    _view3 = [self createBlockViewWithColor:UIColor.redColor
-                                   andFrame:CGRectMake(0, gridY1+gridStepY*3-vSide, vSide, vSide)];
-    
-    [self.view addSubview:_view1];
-    [self.view addSubview:_view2];
-    [self.view addSubview:_view3];
+    _tlView1 = [[TrafficLightView1 alloc] initWithFrame:CGRectMake(0, gridY1, w, (h-gridY1)/2)];
+    _tlView2 = [[TrafficLightView2 alloc] initWithFrame:CGRectMake(0, gridY1+(h-gridY1)/2, w, (h-gridY1)/2)];
+    [self.view addSubview:_tlView1];
+    [self.view addSubview:_tlView2];
 }
 
 - (void)addButtons {
@@ -60,57 +51,14 @@
 
 - (void)onStopBtnPressed
 {
-    
+    [_tlView1 stopAnimation];
+    [_tlView2 stopAnimation];
 }
 
 - (void)onRunBtnPressed
 {
-    CGFloat w = self.view.frame.size.width;
-    CGRect f1 = _view1.frame;
-    f1.origin.x = w/2;
-    CGRect f2 = _view2.frame;
-    f2.origin.x = w/2;
-    CGRect f3 = _view3.frame;
-    f3.origin.x = w/2;
-    
-    [UIView animateWithDuration:4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        _view1.frame = f1;
-    } completion:^(BOOL finished) {
-        
-    }];
-    
-    [UIView animateWithDuration:5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        _view2.frame = f2;
-    } completion:^(BOOL finished) {
-        
-    }];
-    
-    [UIView animateWithDuration:3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        _view3.frame = f3;
-    } completion:^(BOOL finished) {
-        
-    }];
-    
-    [UIView animateWithDuration:0.1 delay:5 options:UIViewAnimationOptionCurveLinear animations:^{
-        _view1.frame = CGRectZero;
-        _view2.frame = CGRectZero;
-        _view3.frame = CGRectZero;
-    } completion:^(BOOL finished) {
-        [_view1 removeFromSuperview];
-        [_view2 removeFromSuperview];
-        [_view3 removeFromSuperview];
-    }];
-    
-
+    [_tlView1 startAnimation];
+    [_tlView2 startAnimation];
 }
-
-- (UIView*)createBlockViewWithColor:(UIColor*)color andFrame:(CGRect)frame
-{
-    UIView* v = [[UIView alloc] initWithFrame:frame];
-    [v setUserInteractionEnabled:NO];
-    v.backgroundColor = color;
-    return v;
-}
-
 
 @end
